@@ -118,6 +118,8 @@
     .actions { grid-column: 1 / -1; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
     .error { grid-column: 1 / -1; color: #9a3b2a; font-size: .92rem; margin: 0; }
     .error:empty { display: none; }
+    .legal-note { grid-column: 1 / -1; margin: 0; font-size: .82rem; color: var(--muted); }
+    .legal-note a { color: var(--olive); }
 
     /* Step 4: confirmed */
     .done-wrap { text-align: center; padding: 30px 0 10px; }
@@ -243,6 +245,7 @@
           <div class="field full"><label for="message">Anything we should know? (optional)</label><textarea id="message" name="message" placeholder="Questions, how you heard about us, who's joining…"></textarea></div>
           <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
           <p class="error" id="form-error" role="alert"></p>
+          <p class="legal-note">By booking, you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>.</p>
           <div class="actions">
             <button class="btn btn-solid" type="submit" id="confirm-btn">Confirm Booking</button>
             <button class="btn btn-ghost" type="button" data-go="2">Back</button>
@@ -277,6 +280,7 @@
     <div class="wrap">
       <span>© <span id="year">2026</span> Sol Properties · Serangan Sands, South Lombok</span>
       <span><a href="https://wa.me/64274067940">WhatsApp +64 27 406 7940</a> · <a href="mailto:solpropertieslombok@gmail.com">solpropertieslombok@gmail.com</a></span>
+      <span><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a></span>
     </div>
   </footer>
 

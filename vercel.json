@@ -2,6 +2,8 @@
   "cleanUrls": true,
   "redirects": [
     { "source": "/book-online", "destination": "/book", "permanent": true },
-    { "source": "/serangansands", "destination": "/", "permanent": true }
+    { "source": "/serangansands", "destination": "/", "permanent": true },
+    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
+    { "source": "/terms-of-service", "destination": "/terms", "permanent": true }
   ]
 }
