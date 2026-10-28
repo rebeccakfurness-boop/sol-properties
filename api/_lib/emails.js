@@ -44,7 +44,7 @@ export function enquiryAutoReply({ first }) {
         <p style="margin:0 0 6px;"><strong style="font-weight:bold;">Online meeting</strong> — a 30-minute Google Meet call to talk through the villa, pricing and the purchase process.</p>
         <p style="margin:0 0 18px;"><strong style="font-weight:bold;">Site tour</strong> — meet us at Serangan Sands, walk the land and see the beach for yourself.</p>
         <p>${button(online, 'Book an online meeting')}${button(tour, 'Book a site tour', false)}</p>
-        <p>Only one land and villa package remains, from US$360,000 including land, villa, pool and full furnishing. You can <a href="${esc(BROCHURE_URL)}" style="color:#4e5236;">view the villa details here</a>.</p>
+        <p>Only one land and villa package remains, from US$360,000 including land, villa, pool and full furnishing. You can <a href="${esc(BROCHURE_URL)}" style="color:#4e5236;">download our brochure here</a>.</p>
         <p>Prefer to chat now? Message us on <a href="${WHATSAPP.url}" style="color:#4e5236;">WhatsApp</a>.</p>
         <p style="margin-top:28px;">Warm regards,<br>The Sol Properties team</p>`,
     }),
@@ -58,6 +58,7 @@ The best way to get your questions answered is a short meeting with us:
 - Site tour at Serangan Sands: ${tour}
 
 Only one land and villa package remains, from US$360,000 including land, villa, pool and full furnishing.
+Brochure: ${BROCHURE_URL}
 
 Prefer to chat now? WhatsApp us: ${WHATSAPP.url}
 

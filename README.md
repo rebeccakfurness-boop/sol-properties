@@ -70,6 +70,9 @@ Then go to **Deployments**, open the latest one, click **⋯ → Redeploy**. Var
 
 If anything fails, open the deployment in Vercel → **Logs**. Errors from Google appear there.
 
+## Brochure
+`assets/serangan-sands-brochure.pdf` is generated from `brochure/brochure.html` (A4, 6 pages). Edit the HTML, then run `npm run brochure` (needs Playwright + Chromium) to rebuild the PDF.
+
 ## Optional local photos
 See `assets/img/README.md`.
 

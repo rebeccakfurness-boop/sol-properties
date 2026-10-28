@@ -47,5 +47,5 @@ export const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID || 'primary';
 export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'solpropertieslombok@gmail.com';
 export const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'solpropertieslombok@gmail.com';
 export const SITE_URL = (process.env.SITE_URL || 'https://www.sollombok.com').replace(/\/$/, '');
-export const BROCHURE_URL = process.env.BROCHURE_URL || `${SITE_URL}/#villa`;
+export const BROCHURE_URL = process.env.BROCHURE_URL || `${SITE_URL}/assets/serangan-sands-brochure.pdf`;
 export const WHATSAPP = { label: '+64 27 406 7940', url: 'https://wa.me/64274067940' };
