@@ -210,14 +210,12 @@
     .disclaimer { margin-top: 28px; font-size: .74rem; color: rgba(244,239,231,.5); }
 
     /* ---------- Prime island living ---------- */
-    .island { background: var(--linen); padding-bottom: 0; }
+    .island { background: var(--linen); }
     .island-head { text-align: center; }
     .island-head .eyebrow::before { display: none; }
-    .island-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin: 64px 0 72px; text-align: center; }
+    .island-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin: 64px 0 0; text-align: center; }
     .island-grid h3 { font-size: 1.9rem; font-style: italic; margin-bottom: 10px; }
     .island-grid p { margin: 0 auto; max-width: 30ch; color: var(--muted); font-size: .95rem; }
-    .island-photo { margin: 0; }
-    .island-photo img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
 
     /* ---------- Location ---------- */
     .map-stack { display: grid; gap: 24px; justify-items: start; }
@@ -571,9 +569,6 @@
           <div><h3>Cultural Hotspots</h3><p>Surf, adventure and island culture, surrounded by South Lombok's boutique resorts.</p></div>
           <div><h3>Accessible Transport</h3><p>Just 20 minutes to Lombok International Airport.</p></div>
         </div>
-        <figure class="island-photo reveal">
-          <img src="assets/img/beach.jpg" data-fallback="https://static.wixstatic.com/media/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3f000.jpg/v1/fill/w_2000,h_1000,al_c,q_80,enc_auto/bay.jpg" alt="Serangan Beach with green hills behind, South Lombok" loading="lazy">
-        </figure>
       </div>
     </section>
 

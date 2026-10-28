@@ -5,7 +5,6 @@ use the newer photography; any that are missing fall back automatically.
 
 | File                 | Used for                                      |
 |----------------------|-----------------------------------------------|
-| `beach.jpg`          | Prime Island Living — beach & hills landscape |
 | `aerial.jpg`         | Intro — aerial beach / villa inset            |
 | `villa-exterior.jpg` | Intro — roofline with frangipani              |
 | `pavilion.jpg`       | Interiors banner — thatched pavilion lamps    |
