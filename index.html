@@ -264,6 +264,8 @@
     input:focus, select:focus, textarea:focus { outline: none; border-bottom-color: var(--olive); }
     .form-note { grid-column: 1 / -1; font-size: .8rem; color: var(--muted); margin: -8px 0 0; }
     .form-actions { grid-column: 1 / -1; }
+    .form-note a { color: var(--olive); }
+    .hp { position: absolute; left: -9999px; }
 
     /* ---------- Footer ---------- */
     footer { background: var(--espresso); color: rgba(244,239,231,.75); padding: 80px 0 36px; font-size: .9rem; }
@@ -356,7 +358,7 @@
 
   <header class="site-header" id="top">
     <div class="wrap nav">
-      <a class="brand" href="https://www.sollombok.com/" aria-label="Sol Properties home">
+      <a class="brand" href="/" aria-label="Sol Properties home">
         <svg class="brand-mark"><use href="#mark"/></svg>
         <span class="brand-text"><strong>SOL</strong><span>PROPERTIES</span></span>
       </a>
@@ -367,7 +369,7 @@
           <li><a href="#location">Location</a></li>
           <li><a href="https://www.sollombok.com/healthwellnesshub">Health Hub</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn btn-light nav-cta" href="https://www.sollombok.com/book-online">Book Site Tour</a></li>
+          <li><a class="btn btn-light nav-cta" href="/book?type=in-person">Book Site Tour</a></li>
         </ul>
       </nav>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
@@ -393,7 +395,7 @@
         <p>A private collection of beachfront pool villas, each a sanctuary of privacy and comfort with access to the exceptional amenities of the Serangan Sands community.</p>
         <div class="hero-actions">
           <a class="btn btn-solid" href="#contact">Reserve Yours</a>
-          <a class="btn btn-light" href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
+          <a class="btn btn-light" href="https://www-sollombok-com.filesusr.com/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
         </div>
       </div>
       <div class="scroll-cue">Discover</div>
@@ -424,7 +426,7 @@
           <p>This spacious villa offers a seamless blend of indoor and outdoor living, creating a harmonious sanctuary amidst lush tropical landscapes — with the beach and surf spot just metres from your front door.</p>
           <p>Secure a sustainable investment in South Lombok from only <strong>US$360,000</strong>, including both land and villa.</p>
           <div class="signature">
-            <a class="btn btn-solid" href="https://www.sollombok.com/book-online">Book a Meeting</a>
+            <a class="btn btn-solid" href="/book">Book a Meeting</a>
             <a class="btn btn-ghost" href="#availability">View Availability</a>
           </div>
         </div>
@@ -470,8 +472,8 @@
         </div>
 
         <div class="villa-actions reveal">
-          <a class="btn btn-solid" href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
-          <a class="btn btn-ghost" href="https://www.sollombok.com/book-online">Book a Meeting</a>
+          <a class="btn btn-solid" href="https://www-sollombok-com.filesusr.com/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
+          <a class="btn btn-ghost" href="/book">Book a Meeting</a>
         </div>
       </div>
     </section>
@@ -615,7 +617,7 @@
         <h2>Secure your piece of paradise</h2>
         <p>Don't miss the opportunity to own a slice of tropical luxury with Sol Properties. Visit the site or meet our team to learn more.</p>
         <div class="hero-actions">
-          <a class="btn btn-solid" href="https://www.sollombok.com/book-online">Book Site Tour</a>
+          <a class="btn btn-solid" href="/book?type=in-person">Book Site Tour</a>
           <a class="btn btn-light" href="https://wa.me/64274067940" target="_blank" rel="noopener">WhatsApp Us</a>
         </div>
       </div>
@@ -650,8 +652,9 @@
             </select>
           </div>
           <div class="field full"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
-          <p class="form-note">Sending opens your email app with your enquiry ready to go.</p>
-          <div class="form-actions"><button class="btn btn-solid" type="submit">Send Enquiry</button></div>
+          <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="form-note" id="enquiry-status" role="status">Prefer to pick a time now? <a href="/book">Book a meeting</a>.</p>
+          <div class="form-actions"><button class="btn btn-solid" type="submit" id="enquiry-btn">Send Enquiry</button></div>
         </form>
       </div>
     </section>
@@ -661,7 +664,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div>
-          <a class="brand" href="https://www.sollombok.com/">
+          <a class="brand" href="/">
             <svg class="brand-mark"><use href="#mark"/></svg>
             <span class="brand-text"><strong>SOL</strong><span>PROPERTIES</span></span>
           </a>
@@ -684,7 +687,7 @@
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#availability">Availability</a></li>
             <li><a href="#location">Location</a></li>
-            <li><a href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Brochure (PDF)</a></li>
+            <li><a href="https://www-sollombok-com.filesusr.com/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Brochure (PDF)</a></li>
           </ul>
         </div>
         <div>
@@ -692,7 +695,7 @@
           <ul>
             <li><a href="https://wa.me/64274067940" target="_blank" rel="noopener">+64 27 406 7940</a></li>
             <li><a href="mailto:solpropertieslombok@gmail.com">solpropertieslombok@gmail.com</a></li>
-            <li><a href="https://www.sollombok.com/book-online">Book a Site Tour</a></li>
+            <li><a href="/book?type=in-person">Book a Site Tour</a></li>
             <li>Selong Belanak, Lombok Tengah<br>NTB 83572, Indonesia</li>
           </ul>
         </div>
@@ -784,22 +787,40 @@
       if (e.key === 'ArrowRight') show(idx + 1);
     });
 
-    // Enquiry form → pre-filled email
-    document.getElementById('enquiry').addEventListener('submit', e => {
+    // Enquiry form → /api/contact (emails the team and auto-replies inviting a meeting).
+    // Falls back to a pre-filled email if the server can't send it.
+    document.getElementById('enquiry').addEventListener('submit', async e => {
       e.preventDefault();
       const f = e.target;
+      const status = document.getElementById('enquiry-status');
+      const btn = document.getElementById('enquiry-btn');
       if (!f.first.value.trim() || !f.email.checkValidity() || !f.email.value) {
+        status.textContent = f.first.value.trim() ? 'Please enter a valid email address.' : 'Please enter your first name.';
         (f.first.value.trim() ? f.email : f.first).focus();
         return;
       }
-      const name = `${f.first.value} ${f.last.value}`.trim();
-      const body = [
-        `Name: ${name}`, `Email: ${f.email.value}`, `Phone: ${f.phone.value}`,
-        `Interested in: ${f.interest.value}`, '', f.message.value
-      ].join('\n');
-      location.href = 'mailto:solpropertieslombok@gmail.com'
-        + '?subject=' + encodeURIComponent(`Serangan Sands enquiry — ${name}`)
-        + '&body=' + encodeURIComponent(body);
+      const data = Object.fromEntries(new FormData(f));
+      btn.disabled = true; btn.textContent = 'Sending…';
+      try {
+        const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const result = await r.json().catch(() => ({}));
+        if (r.status === 400) { status.textContent = result.error; return; }
+        if (!r.ok) throw new Error(result.error);
+        f.reset();
+        status.innerHTML = `Thank you, ${data.first.replace(/[<>&]/g, '')} — we've received your enquiry and sent you an email to arrange a meeting. <a href="/book">Book a time now</a>.`;
+      } catch {
+        const name = `${data.first} ${data.last}`.trim();
+        const body = [
+          `Name: ${name}`, `Email: ${data.email}`, `Phone: ${data.phone}`,
+          `Interested in: ${data.interest}`, '', data.message
+        ].join('\n');
+        status.textContent = 'Opening your email app to send your enquiry…';
+        location.href = 'mailto:solpropertieslombok@gmail.com'
+          + '?subject=' + encodeURIComponent(`Serangan Sands enquiry — ${name}`)
+          + '&body=' + encodeURIComponent(body);
+      } finally {
+        btn.disabled = false; btn.textContent = 'Send Enquiry';
+      }
     });
 
     document.getElementById('year').textContent = new Date().getFullYear();

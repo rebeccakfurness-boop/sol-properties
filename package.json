@@ -1,0 +1,10 @@
+{
+  "name": "sol-properties",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "google-token": "node scripts/get-refresh-token.mjs",
+    "test": "node --test tests/*.test.js"
+  }
+}

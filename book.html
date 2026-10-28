@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a Meeting | Sol Properties</title>
+  <meta name="description" content="Book an online meeting or an in-person site tour of Serangan Sands, South Lombok.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #f4efe7;
+      --linen: #ebe3d6;
+      --stone: #c9b99b;
+      --olive: #4e5236;
+      --olive-deep: #363925;
+      --espresso: #2b211b;
+      --ink: #2f2a25;
+      --muted: #6f665c;
+      --line: rgba(47, 42, 37, .14);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: var(--sand); color: var(--ink); font: 300 17px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button { font: inherit; color: inherit; }
+    .wrap { width: min(1180px, 100% - 48px); margin-inline: auto; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; margin: 0; }
+    h1 em, h2 em { font-style: italic; color: var(--olive); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 14px; font-size: .74rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase; color: var(--olive); margin-bottom: 18px; }
+    .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 30px; border: 1px solid var(--olive); font: 500 .76rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .3s, color .3s, opacity .3s; }
+    .btn-solid { background: var(--olive); color: var(--sand); }
+    .btn-solid:hover { background: var(--olive-deep); }
+    .btn-ghost { background: transparent; color: var(--olive); }
+    .btn-ghost:hover { background: var(--olive); color: var(--sand); }
+    .btn[disabled] { opacity: .5; cursor: wait; }
+
+    header { background: var(--olive-deep); color: var(--sand); padding: 16px 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand svg { width: 38px; height: 38px; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1; }
+    .brand-text strong { font-family: var(--serif); font-weight: 500; font-size: 1.65rem; letter-spacing: .32em; }
+    .brand-text span { font-size: .58rem; letter-spacing: .5em; margin-top: 5px; opacity: .8; }
+    .back { font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; opacity: .85; }
+    .back:hover { opacity: 1; }
+
+    .intro { padding: 72px 0 40px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: end; }
+    .intro h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+    .intro p { color: var(--muted); margin: 0; max-width: 52ch; }
+
+    .steps { display: flex; gap: 0; list-style: none; margin: 0 0 36px; padding: 0; border-bottom: 1px solid var(--line); }
+    .steps li { flex: 1; padding: 0 0 14px; font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; }
+    .steps li span { font-family: var(--serif); font-size: 1.1rem; margin-right: 8px; letter-spacing: 0; }
+    .steps li.active { color: var(--ink); border-color: var(--olive); }
+    .steps li.done { color: var(--olive); }
+
+    .panel { background: #fbf8f3; border: 1px solid var(--line); padding: 40px; margin-bottom: 100px; }
+    .step { display: none; }
+    .step.show { display: block; animation: fade .4s ease; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } }
+    .step h2 { font-size: 2rem; margin-bottom: 24px; }
+
+    /* Step 1: meeting type */
+    .types { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .type { text-align: left; background: var(--sand); border: 1px solid var(--line); padding: 30px; cursor: pointer; display: grid; grid-template-columns: auto 1fr; gap: 6px 20px; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .type:hover { border-color: var(--olive); transform: translateY(-2px); }
+    .type[aria-pressed="true"] { border-color: var(--olive); box-shadow: inset 0 0 0 1px var(--olive); }
+    .type svg { grid-row: span 3; width: 38px; height: 38px; stroke: var(--olive); fill: none; stroke-width: 1.2; }
+    .type strong { font-family: var(--serif); font-weight: 500; font-size: 1.6rem; line-height: 1.2; }
+    .type .meta { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--olive); }
+    .type p { margin: 0; font-size: .95rem; color: var(--muted); }
+
+    /* Step 2: calendar */
+    .picker { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; }
+    .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+    .cal-head h3 { font-size: 1.6rem; }
+    .cal-nav { display: flex; gap: 8px; }
+    .cal-nav button { width: 40px; height: 40px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 1.1rem; }
+    .cal-nav button:hover:not([disabled]) { border-color: var(--olive); }
+    .cal-nav button[disabled] { opacity: .3; cursor: default; }
+    .cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .dow { text-align: center; font-size: .66rem; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); padding-bottom: 6px; }
+    .day { height: 54px; border: 0; background: transparent; display: grid; place-items: center; font-size: .98rem; color: rgba(47,42,37,.32); position: relative; }
+    .day.available { color: var(--ink); background: var(--linen); cursor: pointer; font-weight: 400; }
+    .day.available::after { content: ""; position: absolute; bottom: 18%; width: 4px; height: 4px; border-radius: 50%; background: var(--olive); }
+    .day.available:hover { background: var(--stone); }
+    .day.selected { background: var(--olive) !important; color: var(--sand); }
+    .day.selected::after { background: var(--sand); }
+    .day.today { text-decoration: underline; text-underline-offset: 4px; }
+    .tz { margin-top: 18px; font-size: .82rem; color: var(--muted); }
+    .tz select { font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid var(--line); padding: 2px 0; max-width: 100%; }
+
+    .times h3 { font-size: 1.4rem; margin-bottom: 16px; min-height: 1.6em; }
+    .slot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; max-height: 360px; overflow-y: auto; padding-right: 4px; }
+    .slot { padding: 13px 8px; border: 1px solid var(--olive); background: transparent; color: var(--olive); cursor: pointer; font-weight: 400; transition: background .2s, color .2s; }
+    .slot:hover, .slot[aria-pressed="true"] { background: var(--olive); color: var(--sand); }
+    .empty { color: var(--muted); font-size: .95rem; }
+    .loading { color: var(--muted); font-size: .95rem; display: flex; align-items: center; gap: 12px; }
+    .loading::before { content: ""; width: 16px; height: 16px; border: 2px solid var(--stone); border-top-color: var(--olive); border-radius: 50%; animation: spin .8s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Step 3: details */
+    .summary { display: flex; flex-wrap: wrap; gap: 10px 28px; padding: 18px 22px; background: var(--linen); margin-bottom: 30px; font-size: .95rem; }
+    .summary strong { font-weight: 500; }
+    .summary button { margin-left: auto; background: none; border: 0; text-decoration: underline; cursor: pointer; color: var(--olive); font-size: .85rem; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 24px; }
+    .field { display: flex; flex-direction: column; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    input, textarea { font: inherit; color: var(--ink); background: transparent; border: 0; border-bottom: 1px solid rgba(47,42,37,.35); padding: 10px 0; border-radius: 0; }
+    textarea { min-height: 100px; resize: vertical; }
+    input:focus, textarea:focus { outline: none; border-bottom-color: var(--olive); }
+    .hp { position: absolute; left: -9999px; }
+    .actions { grid-column: 1 / -1; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .error { grid-column: 1 / -1; color: #9a3b2a; font-size: .92rem; margin: 0; }
+    .error:empty { display: none; }
+
+    /* Step 4: confirmed */
+    .done-wrap { text-align: center; padding: 30px 0 10px; }
+    .tick { width: 70px; height: 70px; margin: 0 auto 24px; border: 1px solid var(--olive); border-radius: 50%; display: grid; place-items: center; }
+    .tick svg { width: 30px; stroke: var(--olive); fill: none; stroke-width: 1.5; }
+    .done-wrap h2 { font-size: 2.6rem; }
+    .done-wrap p { color: var(--muted); max-width: 52ch; margin: 16px auto; }
+    .done-card { display: inline-grid; gap: 6px; text-align: left; padding: 26px 32px; background: var(--linen); margin: 14px 0 28px; }
+    .done-card a { color: var(--olive); word-break: break-all; }
+
+    .notice { padding: 22px 26px; border-left: 3px solid var(--olive); background: var(--linen); }
+    .notice p { margin: 0 0 14px; }
+
+    footer { background: var(--espresso); color: rgba(244,239,231,.75); padding: 34px 0; font-size: .85rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--sand); }
+
+    @media (max-width: 900px) {
+      .intro, .picker { grid-template-columns: 1fr; gap: 32px; }
+      .intro { padding-top: 48px; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .wrap { width: calc(100% - 32px); }
+      .panel { padding: 26px 18px; margin-bottom: 64px; }
+      .types, form { grid-template-columns: 1fr; }
+      .steps li { font-size: 0; }
+      .steps li span { font-size: 1.1rem; }
+      .back span { display: none; }
+      .cal { gap: 3px; }
+      .day { height: 44px; }
+      .summary button { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 64 64">
+      <path d="M14 34a18 18 0 0 1 36 0" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M6 40c5 0 7.5-3 13-3s8 3 13 3 7.5-3 13-3 8 3 13 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 47c4 0 6.5-2.5 11-2.5s7 2.5 11 2.5 6.5-2.5 11-2.5 6 2.5 8 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+    </symbol>
+  </svg>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="/" aria-label="Sol Properties home">
+        <svg><use href="#mark"/></svg>
+        <span class="brand-text"><strong>SOL</strong><span>PROPERTIES</span></span>
+      </a>
+      <a class="back" href="/">← <span>Back to Serangan Sands</span></a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <div>
+        <div class="eyebrow">Book a Meeting</div>
+        <h1>Let's find a time <em>to talk</em></h1>
+      </div>
+      <p>Meet us online from anywhere in the world, or join us in South Lombok for a tour of Serangan Sands. You'll get a calendar invitation straight away.</p>
+    </section>
+
+    <ol class="steps" aria-label="Booking steps">
+      <li data-step="1" class="active"><span>01</span>Meeting type</li>
+      <li data-step="2"><span>02</span>Date &amp; time</li>
+      <li data-step="3"><span>03</span>Your details</li>
+      <li data-step="4"><span>04</span>Confirmed</li>
+    </ol>
+
+    <div class="panel">
+      <!-- Step 1 -->
+      <section class="step show" id="step-1" aria-labelledby="h-step-1">
+        <h2 id="h-step-1">How would you like to meet?</h2>
+        <div class="types">
+          <button class="type" type="button" data-type="online" aria-pressed="false">
+            <svg viewBox="0 0 40 40"><rect x="4" y="9" width="23" height="22" rx="2"/><path d="M27 17l9-5v16l-9-5"/></svg>
+            <strong>Online meeting</strong>
+            <span class="meta">30 min · Google Meet</span>
+            <p>A video call to talk through the villa, pricing and the purchase process — from anywhere in the world.</p>
+          </button>
+          <button class="type" type="button" data-type="in-person" aria-pressed="false">
+            <svg viewBox="0 0 40 40"><path d="M20 36s11-10.5 11-19a11 11 0 0 0-22 0c0 8.5 11 19 11 19z"/><circle cx="20" cy="17" r="4"/></svg>
+            <strong>Site tour</strong>
+            <span class="meta">60 min · Serangan Sands, Lombok</span>
+            <p>Meet us on site, walk the land and see the beach and surf break for yourself.</p>
+          </button>
+        </div>
+      </section>
+
+      <!-- Step 2 -->
+      <section class="step" id="step-2" aria-labelledby="h-step-2">
+        <h2 id="h-step-2">Choose a date &amp; time</h2>
+        <div class="picker">
+          <div>
+            <div class="cal-head">
+              <h3 id="month-label"></h3>
+              <div class="cal-nav">
+                <button type="button" id="prev-month" aria-label="Previous month">‹</button>
+                <button type="button" id="next-month" aria-label="Next month">›</button>
+              </div>
+            </div>
+            <div class="cal" id="calendar" role="grid" aria-labelledby="month-label"></div>
+            <p class="tz" id="tz-note"></p>
+          </div>
+          <div class="times">
+            <h3 id="times-label">Select a date</h3>
+            <div class="slot-list" id="slots"><p class="empty">Days with availability are highlighted.</p></div>
+          </div>
+        </div>
+        <p style="margin-top:32px"><button class="btn btn-ghost" type="button" data-go="1">← Change meeting type</button></p>
+      </section>
+
+      <!-- Step 3 -->
+      <section class="step" id="step-3" aria-labelledby="h-step-3">
+        <h2 id="h-step-3">Your details</h2>
+        <div class="summary" id="summary"></div>
+        <form id="details" novalidate>
+          <div class="field"><label for="name">Full name</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field full"><label for="phone">Phone / WhatsApp (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="message">Anything we should know? (optional)</label><textarea id="message" name="message" placeholder="Questions, how you heard about us, who's joining…"></textarea></div>
+          <input class="hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="error" id="form-error" role="alert"></p>
+          <div class="actions">
+            <button class="btn btn-solid" type="submit" id="confirm-btn">Confirm Booking</button>
+            <button class="btn btn-ghost" type="button" data-go="2">Back</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Step 4 -->
+      <section class="step" id="step-4" aria-live="polite">
+        <div class="done-wrap">
+          <div class="tick"><svg viewBox="0 0 30 30"><path d="M6 15.5l6 6L24 9"/></svg></div>
+          <h2>You're booked in</h2>
+          <p id="done-text"></p>
+          <div class="done-card" id="done-card"></div>
+          <div><a class="btn btn-solid" href="/">Back to Serangan Sands</a></div>
+        </div>
+      </section>
+
+      <!-- Shown when booking can't load -->
+      <section class="step" id="step-unavailable">
+        <div class="notice">
+          <p id="unavailable-text">Online booking is temporarily unavailable.</p>
+          <p>Please contact us directly and we'll arrange a time that suits you.</p>
+          <a class="btn btn-solid" href="https://wa.me/64274067940" target="_blank" rel="noopener">WhatsApp Us</a>
+          <a class="btn btn-ghost" href="mailto:solpropertieslombok@gmail.com?subject=Meeting%20request%20%E2%80%94%20Serangan%20Sands">Email Us</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Sol Properties · Serangan Sands, South Lombok</span>
+      <span><a href="https://wa.me/64274067940">WhatsApp +64 27 406 7940</a> · <a href="mailto:solpropertieslombok@gmail.com">solpropertieslombok@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const LOMBOK_TZ = 'Asia/Makassar';
+    const TYPES = {
+      online: { label: 'Online meeting', minutes: 30 },
+      'in-person': { label: 'Site tour', minutes: 60 },
+    };
+    const params = new URLSearchParams(location.search);
+    const DEMO = params.has('demo'); // ?demo shows sample times without Google, for previewing the page
+
+    const state = {
+      type: null,
+      tz: Intl.DateTimeFormat().resolvedOptions().timeZone || LOMBOK_TZ,
+      month: null,          // "YYYY-MM" being shown
+      date: null,           // "YYYY-MM-DD" selected
+      slot: null,           // ISO string selected
+      cache: {},            // `${type}|${month}` -> Promise<string[]>
+    };
+
+    const $ = id => document.getElementById(id);
+    const dayKey = (d, tz) => new Intl.DateTimeFormat('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(d);
+    const fmt = (d, opts, tz = state.tz) => new Intl.DateTimeFormat(undefined, { timeZone: tz, ...opts }).format(d);
+    const displayTz = () => (state.type === 'in-person' ? LOMBOK_TZ : state.tz);
+    const tzName = tz => {
+      const part = new Intl.DateTimeFormat(undefined, { timeZone: tz, timeZoneName: 'long' }).formatToParts(new Date()).find(p => p.type === 'timeZoneName');
+      return part ? part.value : tz;
+    };
+
+    // ---------- Steps ----------
+    function go(n) {
+      document.querySelectorAll('.step').forEach(s => s.classList.remove('show'));
+      $(typeof n === 'number' ? `step-${n}` : n).classList.add('show');
+      document.querySelectorAll('.steps li').forEach(li => {
+        const s = +li.dataset.step;
+        li.classList.toggle('active', s === n);
+        li.classList.toggle('done', typeof n === 'number' && s < n);
+      });
+      if (typeof n === 'number' && n > 1) document.querySelector('.steps').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => go(+b.dataset.go)));
+
+    // ---------- Step 1 ----------
+    function chooseType(type) {
+      state.type = type;
+      state.date = state.slot = null;
+      document.querySelectorAll('.type').forEach(b => b.setAttribute('aria-pressed', b.dataset.type === type));
+      state.month = dayKey(new Date(), displayTz()).slice(0, 7);
+      renderTzNote();
+      go(2);
+      renderCalendar();
+    }
+    document.querySelectorAll('.type').forEach(b => b.addEventListener('click', () => chooseType(b.dataset.type)));
+
+    function renderTzNote() {
+      if (state.type === 'in-person') {
+        $('tz-note').textContent = `Times shown in Lombok time (${tzName(LOMBOK_TZ)}).`;
+        return;
+      }
+      const zones = (Intl.supportedValuesOf ? Intl.supportedValuesOf('timeZone') : [state.tz]);
+      if (!zones.includes(state.tz)) zones.unshift(state.tz);
+      $('tz-note').innerHTML = `Times shown in <select id="tz-select" aria-label="Time zone">${
+        zones.map(z => `<option value="${z}"${z === state.tz ? ' selected' : ''}>${z.replace(/_/g, ' ')}</option>`).join('')
+      }</select>`;
+      $('tz-select').addEventListener('change', e => {
+        state.tz = e.target.value;
+        state.date = state.slot = null;
+        renderCalendar();
+      });
+    }
+
+    // ---------- Availability ----------
+    function monthRange(month) {
+      const [y, m] = month.split('-').map(Number);
+      // pad a day each side so every local date in the month is covered whatever the time zone
+      return { from: new Date(Date.UTC(y, m - 1, 1) - 864e5), to: new Date(Date.UTC(y, m, 1) + 864e5) };
+    }
+
+    function demoSlots(from, to) {
+      const out = [];
+      const minutes = TYPES[state.type].minutes;
+      for (let t = new Date(Math.max(from, Date.now() + 864e5)); t < to; t = new Date(t.getTime() + 864e5)) {
+        const day = dayKey(t, LOMBOK_TZ);
+        const dow = new Date(day + 'T00:00:00Z').getUTCDay();
+        if (dow === 0) continue;
+        for (let h = 9; h + minutes / 60 <= 16; h += 0.5) {
+          if ((h * 2 + dow) % 3 === 0) continue;
+          const hh = String(Math.floor(h)).padStart(2, '0'), mm = h % 1 ? '30' : '00';
+          out.push(new Date(`${day}T${hh}:${mm}:00+08:00`).toISOString());
+        }
+      }
+      return out;
+    }
+
+    function loadMonth(month) {
+      const key = `${state.type}|${month}`;
+      if (!state.cache[key]) {
+        const { from, to } = monthRange(month);
+        state.cache[key] = DEMO
+          ? Promise.resolve(demoSlots(from, to))
+          : fetch(`/api/availability?type=${state.type}&from=${from.toISOString()}&to=${to.toISOString()}`)
+              .then(async r => {
+                const data = await r.json().catch(() => ({}));
+                if (!r.ok) throw Object.assign(new Error(data.error || 'Could not load availability'), { status: r.status });
+                return data.slots;
+              });
+        state.cache[key].catch(() => delete state.cache[key]);
+      }
+      return state.cache[key];
+    }
+
+    // ---------- Step 2: calendar ----------
+    async function renderCalendar() {
+      const tz = displayTz();
+      const [y, m] = state.month.split('-').map(Number);
+      const first = new Date(Date.UTC(y, m - 1, 1));
+      $('month-label').textContent = new Intl.DateTimeFormat(undefined, { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(first);
+
+      const thisMonth = dayKey(new Date(), tz).slice(0, 7);
+      const lastMonth = dayKey(new Date(Date.now() + 62 * 864e5), tz).slice(0, 7);
+      $('prev-month').disabled = state.month <= thisMonth;
+      $('next-month').disabled = state.month >= lastMonth;
+
+      const cal = $('calendar');
+      const dows = [...Array(7)].map((_, i) => new Intl.DateTimeFormat(undefined, { weekday: 'short', timeZone: 'UTC' }).format(new Date(Date.UTC(2024, 0, i + 1))));
+      const daysInMonth = new Date(Date.UTC(y, m, 0)).getUTCDate();
+      const lead = (first.getUTCDay() + 6) % 7; // weeks start Monday
+      const today = dayKey(new Date(), tz);
+      cal.innerHTML = dows.map(d => `<div class="dow">${d}</div>`).join('')
+        + '<div></div>'.repeat(lead)
+        + [...Array(daysInMonth)].map((_, i) => {
+          const key = `${state.month}-${String(i + 1).padStart(2, '0')}`;
+          return `<button type="button" class="day${key === today ? ' today' : ''}" data-day="${key}" disabled>${i + 1}</button>`;
+        }).join('');
+
+      $('slots').innerHTML = '<p class="loading">Checking availability…</p>';
+      $('times-label').textContent = state.date ? '' : 'Select a date';
+
+      let slots;
+      const month = state.month, type = state.type;
+      try {
+        slots = await loadMonth(month);
+      } catch (err) {
+        if (err.status === 503) {
+          $('unavailable-text').textContent = 'Online booking is being set up.';
+          return go('step-unavailable');
+        }
+        $('slots').innerHTML = `<p class="empty">${err.message} <button class="btn btn-ghost" type="button" id="retry" style="margin-top:14px">Try again</button></p>`;
+        $('retry').onclick = renderCalendar;
+        return;
+      }
+      if (month !== state.month || type !== state.type) return; // user moved on while loading
+
+      const byDay = {};
+      slots.forEach(s => (byDay[dayKey(new Date(s), tz)] ||= []).push(s));
+      state.byDay = byDay;
+
+      cal.querySelectorAll('.day').forEach(btn => {
+        const has = byDay[btn.dataset.day];
+        btn.disabled = !has;
+        btn.classList.toggle('available', !!has);
+        btn.classList.toggle('selected', btn.dataset.day === state.date);
+        if (has) btn.setAttribute('aria-label', `${btn.dataset.day}: ${has.length} times available`);
+        btn.onclick = () => selectDate(btn.dataset.day);
+      });
+
+      const firstOpen = Object.keys(byDay).sort().find(d => d.startsWith(month));
+      if (state.date && byDay[state.date]) selectDate(state.date);
+      else if (!firstOpen) $('slots').innerHTML = '<p class="empty">No times left this month — try the next month.</p>';
+      else $('slots').innerHTML = '<p class="empty">Days with availability are highlighted.</p>';
+    }
+
+    function shiftMonth(n) {
+      const [y, m] = state.month.split('-').map(Number);
+      const d = new Date(Date.UTC(y, m - 1 + n, 1));
+      state.month = d.toISOString().slice(0, 7);
+      state.date = null;
+      renderCalendar();
+    }
+    $('prev-month').onclick = () => shiftMonth(-1);
+    $('next-month').onclick = () => shiftMonth(1);
+
+    function selectDate(day) {
+      state.date = day;
+      document.querySelectorAll('.day').forEach(b => b.classList.toggle('selected', b.dataset.day === day));
+      const tz = displayTz();
+      const [y, m, d] = day.split('-').map(Number);
+      $('times-label').textContent = new Intl.DateTimeFormat(undefined, { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' }).format(new Date(Date.UTC(y, m - 1, d)));
+      $('slots').innerHTML = state.byDay[day].map(s =>
+        `<button type="button" class="slot" data-slot="${s}">${fmt(new Date(s), { hour: 'numeric', minute: '2-digit' }, tz)}</button>`).join('');
+      $('slots').querySelectorAll('.slot').forEach(b => b.onclick = () => selectSlot(b.dataset.slot));
+    }
+
+    function whenLabel(iso) {
+      const tz = displayTz();
+      const start = new Date(iso);
+      const end = new Date(start.getTime() + TYPES[state.type].minutes * 60000);
+      const date = fmt(start, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }, tz);
+      const time = `${fmt(start, { hour: 'numeric', minute: '2-digit' }, tz)} – ${fmt(end, { hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }, tz)}`;
+      return { date, time };
+    }
+
+    function selectSlot(iso) {
+      state.slot = iso;
+      const { date, time } = whenLabel(iso);
+      const where = state.type === 'online' ? 'Google Meet (link emailed to you)' : 'Serangan Sands, Selong Belanak';
+      $('summary').innerHTML = `<span><strong>${TYPES[state.type].label}</strong></span><span>${date}</span><span>${time}</span><span>${where}</span><button type="button" data-go="2">Change</button>`;
+      $('summary').querySelector('button').onclick = () => go(2);
+      $('form-error').textContent = '';
+      go(3);
+      $('name').focus({ preventScroll: true });
+    }
+
+    // ---------- Step 3: submit ----------
+    $('details').addEventListener('submit', async e => {
+      e.preventDefault();
+      const f = e.target;
+      const err = $('form-error');
+      if (!f.name.value.trim()) { err.textContent = 'Please enter your name.'; return f.name.focus(); }
+      if (!f.email.value.trim() || !f.email.checkValidity()) { err.textContent = 'Please enter a valid email address.'; return f.email.focus(); }
+      err.textContent = '';
+
+      const btn = $('confirm-btn');
+      btn.disabled = true; btn.textContent = 'Booking…';
+      try {
+        let result;
+        if (DEMO) {
+          result = { ok: true, meetLink: state.type === 'online' ? 'https://meet.google.com/abc-defg-hij' : null };
+        } else {
+          const r = await fetch('/api/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              type: state.type, start: state.slot, timeZone: displayTz(),
+              name: f.name.value, email: f.email.value, phone: f.phone.value, message: f.message.value, company: f.company.value,
+            }),
+          });
+          result = await r.json().catch(() => ({}));
+          if (r.status === 409) {
+            delete state.cache[`${state.type}|${state.month}`];
+            err.textContent = result.error;
+            setTimeout(() => { go(2); renderCalendar(); }, 1800);
+            return;
+          }
+          if (!r.ok) throw new Error(result.error || 'Something went wrong. Please try again.');
+        }
+        showConfirmed(f, result);
+      } catch (ex) {
+        err.textContent = ex.message;
+      } finally {
+        btn.disabled = false; btn.textContent = 'Confirm Booking';
+      }
+    });
+
+    function showConfirmed(f, result) {
+      const { date, time } = whenLabel(state.slot);
+      const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+      $('done-text').textContent = `Thank you, ${f.name.value.trim().split(' ')[0]}. A calendar invitation and confirmation have been sent to ${f.email.value.trim()}.`;
+      $('done-card').innerHTML = `
+        <strong>${TYPES[state.type].label}</strong>
+        <span>${date}</span>
+        <span>${time}</span>
+        ${state.type === 'online'
+          ? (result.meetLink ? `<span>Google Meet: <a href="${esc(result.meetLink)}" target="_blank" rel="noopener">${esc(result.meetLink)}</a></span>` : '<span>Your Google Meet link is in the invitation.</span>')
+          : '<span>Serangan Sands, Selong Belanak — <a href="https://maps.google.com/?q=-8.8937603,116.2819948" target="_blank" rel="noopener">open in Maps</a></span>'}`;
+      go(4);
+    }
+
+    // ---------- Start ----------
+    $('year').textContent = new Date().getFullYear();
+    const startType = params.get('type');
+    if (TYPES[startType]) chooseType(startType);
+  </script>
+</body>
+</html>
