@@ -48,4 +48,5 @@ export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'solpropertieslombok@gma
 export const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'solpropertieslombok@gmail.com';
 export const SITE_URL = (process.env.SITE_URL || 'https://www.sollombok.com').replace(/\/$/, '');
 export const BROCHURE_URL = process.env.BROCHURE_URL || `${SITE_URL}/assets/serangan-sands-brochure.pdf`;
+export const SOCIAL = { instagram: 'https://www.instagram.com/sol_lombok/', facebook: 'https://www.facebook.com/people/Sol-Properties-Lombok/61579582295076/' };
 export const WHATSAPP = { name: 'Mariya', label: '+62 821 4591 6078', url: 'https://wa.me/6282145916078' };

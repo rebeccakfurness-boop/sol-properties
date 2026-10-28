@@ -1,4 +1,4 @@
-import { SITE_URL, BROCHURE_URL, WHATSAPP, NOTIFY_EMAIL, SITE_ADDRESS, SITE_MAP_URL } from './config.js';
+import { SITE_URL, BROCHURE_URL, WHATSAPP, NOTIFY_EMAIL, SITE_ADDRESS, SITE_MAP_URL, SOCIAL } from './config.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -19,14 +19,16 @@ function layout({ preheader, heading, body }) {
           Sol Properties · Serangan Sands, Selong Belanak, South Lombok<br>
           WhatsApp ${WHATSAPP.name} <a href="${WHATSAPP.url}" style="color:#4e5236;">${WHATSAPP.label}</a> ·
           <a href="mailto:${NOTIFY_EMAIL}" style="color:#4e5236;">${NOTIFY_EMAIL}</a> ·
-          <a href="${SITE_URL}" style="color:#4e5236;">sollombok.com</a>
+          <a href="${SITE_URL}" style="color:#4e5236;">sollombok.com</a><br>
+          <a href="${SOCIAL.instagram}" style="color:#4e5236;">Instagram</a> ·
+          <a href="${SOCIAL.facebook}" style="color:#4e5236;">Facebook</a>
         </td></tr>
       </table>
     </td></tr>
   </table></body></html>`;
 }
 
-const textFooter = `\n\nSol Properties · Serangan Sands, Selong Belanak, South Lombok\nWhatsApp ${WHATSAPP.name} ${WHATSAPP.label} · ${NOTIFY_EMAIL} · ${SITE_URL}`;
+const textFooter = `\n\nSol Properties · Serangan Sands, Selong Belanak, South Lombok\nWhatsApp ${WHATSAPP.name} ${WHATSAPP.label} · ${NOTIFY_EMAIL} · ${SITE_URL}\nInstagram ${SOCIAL.instagram} · Facebook ${SOCIAL.facebook}`;
 
 // Sent automatically to anyone who submits the contact form.
 export function enquiryAutoReply({ first }) {
