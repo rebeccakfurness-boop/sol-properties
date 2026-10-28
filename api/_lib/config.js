@@ -40,7 +40,7 @@ export const MAX_DAYS_AHEAD = 60;         // how far ahead the calendar opens
 
 export const SITE_ADDRESS =
   'Serangan Sands, Dusun Serangan, Selong Belanak, Kec. Praya Barat, Kabupaten Lombok Tengah, Nusa Tenggara Barat 83572, Indonesia';
-export const SITE_MAP_URL = 'https://maps.google.com/?q=-8.8937603,116.2819948';
+export const SITE_MAP_URL = 'https://maps.app.goo.gl/MEbEZqxwD3Haizk58';
 
 export const CALENDAR_ID = process.env.GOOGLE_CALENDAR_ID || 'primary';
 // Must be the Google account the refresh token belongs to (or a Gmail "Send mail as" alias).

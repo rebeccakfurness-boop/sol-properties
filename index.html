@@ -220,7 +220,8 @@
     .island-photo img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
 
     /* ---------- Location ---------- */
-    .map-stack { display: grid; gap: 24px; }
+    .map-stack { display: grid; gap: 24px; justify-items: start; }
+    .map-stack > .area-map, .map-stack > .map { width: 100%; }
     .area-map { margin: 0; background: #f1ead6; padding: 12px; }
     .area-map img { width: 100%; }
     address { font-style: normal; font-size: 1.02rem; line-height: 1.6; }
@@ -602,6 +603,7 @@
           <iframe title="Map showing Serangan Sands, South Lombok" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                   src="https://maps.google.com/maps?q=-8.8937603,116.2819948&amp;z=13&amp;output=embed"></iframe>
           </div>
+          <a class="btn btn-ghost" href="https://maps.app.goo.gl/MEbEZqxwD3Haizk58" target="_blank" rel="noopener">Open in Google Maps</a>
         </div>
       </div>
     </section>
