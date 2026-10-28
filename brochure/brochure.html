@@ -39,11 +39,10 @@
     .brand span { display: block; font-size: 5.5pt; letter-spacing: .5em; margin-top: 1.4mm; opacity: .85; }
 
     /* ---------- 1. Cover ---------- */
-    .cover { color: var(--sand); background: var(--espresso); }
-    .cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 64% 50%; }
-    .cover::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,24,18,.55) 0%, rgba(30,24,18,.05) 30%, rgba(30,24,18,.1) 55%, rgba(30,24,18,.85) 100%); }
-    .cover .brand { position: absolute; top: 16mm; left: 18mm; z-index: 1; }
-    .cover-text { position: absolute; left: 18mm; right: 18mm; bottom: 22mm; z-index: 1; }
+    .cover { color: var(--sand); background: var(--olive-deep); }
+    .cover > img { position: absolute; top: 36mm; left: 18mm; width: 174mm; height: 150mm; object-fit: cover; object-position: 50% 60%; }
+    .cover .brand { position: absolute; top: 14mm; left: 18mm; z-index: 1; }
+    .cover-text { position: absolute; left: 18mm; right: 18mm; bottom: 20mm; z-index: 1; }
     .cover-text .eyebrow { color: var(--stone); }
     .cover h1 { font-size: 62pt; letter-spacing: .01em; }
     .cover h1 em { display: block; font-size: 22pt; color: var(--linen); margin-top: 4mm; letter-spacing: .03em; }
@@ -62,9 +61,9 @@
     .facts span { font-size: 5.8pt; letter-spacing: .2em; text-transform: uppercase; opacity: .75; }
 
     /* ---------- 3. Villa ---------- */
-    .renders { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; margin: 9mm 0 0; }
+    .renders { margin: 9mm 0 0; }
     .renders figure { margin: 0; }
-    .renders img { width: 100%; height: 78mm; object-fit: cover; }
+    .renders img { width: 100%; height: 96mm; object-fit: cover; object-position: 50% 45%; }
     .renders figcaption { font-size: 6.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-top: 2mm; }
     .specs { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 9mm; border-top: .3mm solid var(--line); border-left: .3mm solid var(--line); }
     .spec { padding: 6mm 5mm; border-right: .3mm solid var(--line); border-bottom: .3mm solid var(--line); }
@@ -143,7 +142,7 @@
 
   <!-- 1. Cover -->
   <section class="page cover">
-    <img src="img/beach-1.jpg" alt="">
+    <img src="img/pool.jpg" alt="">
     <div class="brand"><svg><use href="#mark"/></svg><div><strong>SOL</strong><span>PROPERTIES</span></div></div>
     <div class="cover-text">
       <div class="eyebrow">Beachfront Villas · South Lombok</div>
@@ -191,8 +190,7 @@
         <p>A turnkey two-bedroom pool villa on its own land, delivered fully furnished with designer furniture and appliances — ready to live in, or to let.</p>
       </div>
       <div class="renders">
-        <figure><img src="img/living.jpg" alt=""><figcaption>Open-plan living &amp; kitchen</figcaption></figure>
-        <figure><img src="img/pool.jpg" alt=""><figcaption>Private pool &amp; pavilion</figcaption></figure>
+        <figure><img src="img/living.jpg" alt=""><figcaption>Open-plan living, kitchen &amp; dining</figcaption></figure>
       </div>
       <div class="specs">
         <div class="spec"><svg viewBox="0 0 32 32"><path d="M4 26h24M7 26V12l9-6 9 6v14M13 26v-7h6v7"/></svg><h3>Beachfront Luxury</h3><p>White sand beach and surf break at your door.</p></div>
@@ -225,7 +223,7 @@
       <div class="invest-grid">
         <div><div class="num">14%</div><h3>Passive Income</h3><p>Projected returns of up to 14% from holiday rental when you're not in residence.</p></div>
         <div><div class="num">01</div><h3>Turnkey &amp; Furnished</h3><p>Designer furniture and appliances included, so the villa is guest-ready from day one.</p></div>
-        <div><div class="num">20′</div><h3>Growing Destination</h3><p>South Lombok's coastline, 20 minutes from Lombok International Airport, is fast emerging among travellers.</p></div>
+        <div><div class="num">40′</div><h3>Growing Destination</h3><p>South Lombok's coastline, 40 minutes from Lombok International Airport, is fast emerging among travellers.</p></div>
       </div>
       <p class="note">Projected returns are indicative only and not guaranteed. Please seek independent financial and legal advice before investing.</p>
     </div>
@@ -238,7 +236,7 @@
     <div class="highlights">
       <div><h3>Direct Beach Access</h3><p>White sand and surf at the end of your garden, with fine dining nearby.</p></div>
       <div><h3>Cultural Hotspots</h3><p>Surf, adventure and island culture among South Lombok's boutique resorts.</p></div>
-      <div><h3>Accessible Transport</h3><p>Just 20 minutes to Lombok International Airport.</p></div>
+      <div><h3>Accessible Transport</h3><p>Just 40 minutes to Lombok International Airport.</p></div>
     </div>
     <div class="loc">
       <div class="intro">
@@ -251,7 +249,7 @@
         <ul class="dist">
           <li><span>Serangan Beach &amp; surf break</span><strong>At your door</strong></li>
           <li><span>Selong Belanak Bay</span><strong>5 min</strong></li>
-          <li><span>Lombok International Airport</span><strong>20 min</strong></li>
+          <li><span>Lombok International Airport</span><strong>40 min</strong></li>
           <li><span>Kuta &amp; Mandalika Circuit</span><strong>35 min</strong></li>
         </ul>
         <div class="chips">
