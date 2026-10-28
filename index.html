@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serangan Sands | Sol Properties — Beachfront Villas, South Lombok</title>
+  <meta name="description" content="Serangan Sands by Sol Properties: a private collection of beachfront two-bedroom pool villas in South Lombok. Land and villa packages from US$360,000.">
+  <meta property="og:title" content="Serangan Sands | Sol Properties">
+  <meta property="og:description" content="Beachfront land and villa packages in South Lombok, from US$360,000.">
+  <meta property="og:image" content="https://static.wixstatic.com/media/9ebb6f_e576c64b22bb4f52a8067ca66201caa5~mv2.png/v1/fill/w_1200,h_630,al_c,q_85,enc_auto/pool.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sand: #f4efe7;
+      --linen: #ebe3d6;
+      --stone: #c9b99b;
+      --olive: #4e5236;
+      --olive-deep: #363925;
+      --espresso: #2b211b;
+      --ink: #2f2a25;
+      --muted: #6f665c;
+      --line: rgba(47, 42, 37, .14);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+      --wrap: 1240px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--sand);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .wrap { width: min(var(--wrap), 100% - 48px); margin-inline: auto; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+    h2 { font-size: clamp(2.3rem, 4.4vw, 3.6rem); }
+    h2 em { font-style: italic; color: var(--olive); }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 14px;
+      font-size: .74rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--olive); margin-bottom: 22px;
+    }
+    .eyebrow::before { content: ""; width: 36px; height: 1px; background: currentColor; }
+    .lede { font-size: 1.12rem; color: var(--muted); max-width: 56ch; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 30px; border: 1px solid var(--olive);
+      font: 500 .76rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; transition: background .3s, color .3s, border-color .3s;
+    }
+    .btn-solid { background: var(--olive); color: var(--sand); }
+    .btn-solid:hover { background: var(--olive-deep); border-color: var(--olive-deep); }
+    .btn-ghost { background: transparent; color: var(--olive); }
+    .btn-ghost:hover { background: var(--olive); color: var(--sand); }
+    .btn-light { border-color: rgba(244, 239, 231, .7); color: var(--sand); background: transparent; }
+    .btn-light:hover { background: var(--sand); color: var(--espresso); }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: fixed; inset: 0 0 auto; z-index: 50;
+      transition: background .4s, box-shadow .4s, padding .4s;
+      padding: 22px 0;
+      color: var(--sand);
+    }
+    .site-header.scrolled { background: rgba(54, 57, 37, .97); padding: 12px 0; box-shadow: 0 1px 0 rgba(0,0,0,.15); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand-mark { width: 38px; height: 38px; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1; }
+    .brand-text strong { font-family: var(--serif); font-weight: 500; font-size: 1.65rem; letter-spacing: .32em; }
+    .brand-text span { font-size: .58rem; letter-spacing: .5em; margin-top: 5px; opacity: .8; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { text-decoration: none; font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; opacity: .9; transition: opacity .2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.current { border-bottom: 1px solid currentColor; padding-bottom: 4px; }
+    .nav-cta { padding: 12px 22px; }
+    .menu-toggle { display: none; background: none; border: 0; color: inherit; padding: 8px; cursor: pointer; }
+
+    /* ---------- Hero ---------- */
+    .hero { position: relative; min-height: 100svh; display: grid; place-items: center; overflow: hidden; color: var(--sand); text-align: center; }
+    .hero video, .hero .hero-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(30,24,18,.55) 0%, rgba(30,24,18,.25) 40%, rgba(30,24,18,.65) 100%); }
+    .hero-inner { position: relative; z-index: 1; padding: 140px 24px 120px; max-width: 900px; }
+    .hero-logo { width: 74px; margin: 0 auto 26px; color: var(--sand); }
+    .hero .eyebrow { color: var(--stone); }
+    .hero .eyebrow::before { display: none; }
+    .hero h1 { font-size: clamp(3rem, 8vw, 6.4rem); font-weight: 400; letter-spacing: .02em; }
+    .hero h1 span { display: block; font-style: italic; font-size: .42em; letter-spacing: .04em; margin-top: 14px; color: var(--linen); }
+    .hero p { font-size: 1.12rem; max-width: 620px; margin: 28px auto 40px; color: rgba(244,239,231,.9); }
+    .hero-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .hero .btn-solid { background: var(--sand); color: var(--espresso); border-color: var(--sand); }
+    .hero .btn-solid:hover { background: var(--stone); border-color: var(--stone); }
+    .scroll-cue { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 1; font-size: .66rem; letter-spacing: .3em; text-transform: uppercase; opacity: .75; }
+    .scroll-cue::after { content: ""; display: block; width: 1px; height: 42px; margin: 12px auto 0; background: currentColor; animation: cue 2.2s ease-in-out infinite; transform-origin: top; }
+    @keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+    /* ---------- Key facts strip ---------- */
+    .facts { background: var(--olive-deep); color: var(--sand); }
+    .facts ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); }
+    .facts li { padding: 34px 18px; text-align: center; border-left: 1px solid rgba(244,239,231,.12); }
+    .facts li:first-child { border-left: 0; }
+    .facts strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 2.1rem; line-height: 1.1; }
+    .facts span { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; opacity: .72; }
+
+    section { padding: 120px 0; }
+
+    /* ---------- Intro ---------- */
+    .intro { display: grid; grid-template-columns: 1.05fr 1fr; gap: 80px; align-items: center; }
+    .intro-media { position: relative; }
+    .intro-media img { width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .intro-media .inset {
+      position: absolute; right: -40px; bottom: -40px; width: 46%; aspect-ratio: 1; object-fit: cover;
+      border: 10px solid var(--sand);
+    }
+    .intro-copy p { color: var(--muted); }
+    .intro-copy p + p { margin-top: 0; }
+    .signature { margin-top: 36px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ---------- Villa ---------- */
+    .villa { background: var(--linen); }
+    .villa-head { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; margin-bottom: 64px; }
+    .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .spec { padding: 34px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; gap: 20px; align-items: flex-start; }
+    .spec svg { flex: none; width: 30px; height: 30px; stroke: var(--olive); stroke-width: 1.2; fill: none; }
+    .spec h3 { font-size: 1.45rem; margin-bottom: 4px; }
+    .spec p { margin: 0; font-size: .93rem; color: var(--muted); }
+    .villa-actions { margin-top: 48px; display: flex; gap: 16px; flex-wrap: wrap; }
+
+    /* ---------- Gallery ---------- */
+    .gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 52px; flex-wrap: wrap; }
+    .gallery {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 120px;
+    }
+    .gallery figure { margin: 0; position: relative; overflow: hidden; cursor: zoom-in; background: var(--linen); }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+    .gallery figure:hover img { transform: scale(1.04); }
+    .gallery figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 20px 16px;
+      background: linear-gradient(transparent, rgba(30,24,18,.6));
+      color: var(--sand); font-size: .7rem; letter-spacing: .22em; text-transform: uppercase;
+      opacity: 0; transition: opacity .4s;
+    }
+    .gallery figure:hover figcaption { opacity: 1; }
+    .g1 { grid-column: span 8; grid-row: span 4; }
+    .g2 { grid-column: span 4; grid-row: span 4; }
+    .g3 { grid-column: span 4; grid-row: span 4; }
+    .g4 { grid-column: span 4; grid-row: span 4; }
+    .g5 { grid-column: span 4; grid-row: span 4; }
+    .g6 { grid-column: span 5; grid-row: span 4; }
+    .g7 { grid-column: span 7; grid-row: span 4; }
+
+    .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(24,19,15,.94); display: none; align-items: center; justify-content: center; padding: 40px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-height: 86vh; width: auto; box-shadow: 0 30px 80px rgba(0,0,0,.4); }
+    .lightbox p { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; color: var(--stone); font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; }
+    .lb-btn { position: absolute; background: none; border: 0; color: var(--sand); font: 300 2.2rem/1 var(--sans); cursor: pointer; padding: 16px; opacity: .8; }
+    .lb-btn:hover { opacity: 1; }
+    .lb-close { top: 16px; right: 20px; }
+    .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+
+    /* ---------- Interiors banner ---------- */
+    .banner { position: relative; padding: 0; min-height: 78vh; display: grid; align-items: center; color: var(--sand); overflow: hidden; }
+    .banner img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .banner::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(30,24,18,.72) 0%, rgba(30,24,18,.35) 55%, transparent 100%); z-index: 1; }
+    .banner .wrap { position: relative; z-index: 2; padding: 120px 0; }
+    .banner .eyebrow { color: var(--stone); }
+    .banner h2 em { color: var(--stone); }
+    .banner p { max-width: 46ch; color: rgba(244,239,231,.88); margin: 24px 0 36px; font-size: 1.08rem; }
+
+    /* ---------- Availability ---------- */
+    .availability { display: grid; grid-template-columns: 1fr 1.25fr; gap: 80px; align-items: center; }
+    .status {
+      display: inline-flex; align-items: center; gap: 10px; margin: 28px 0 8px;
+      padding: 10px 18px; border: 1px solid var(--olive); color: var(--olive);
+      font-size: .72rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+    }
+    .status i { width: 8px; height: 8px; border-radius: 50%; background: #9a6b3a; box-shadow: 0 0 0 4px rgba(154,107,58,.18); animation: pulse 2s infinite; }
+    @keyframes pulse { 50% { box-shadow: 0 0 0 8px rgba(154,107,58,0); } }
+    .price-card { margin-top: 32px; padding: 34px 36px; background: var(--linen); border-left: 3px solid var(--olive); }
+    .price-card small { font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+    .price-card .price { font-family: var(--serif); font-size: 3.2rem; line-height: 1.1; margin: 6px 0 4px; }
+    .price-card p { margin: 0 0 24px; color: var(--muted); font-size: .95rem; }
+    .availability figure { margin: 0; }
+    .availability figure img { width: 100%; box-shadow: 0 30px 60px -30px rgba(47,42,37,.45); }
+    .availability figcaption { margin-top: 14px; font-size: .78rem; color: var(--muted); letter-spacing: .06em; }
+
+    /* ---------- Investment ---------- */
+    .invest { background: var(--olive-deep); color: var(--sand); }
+    .invest .eyebrow { color: var(--stone); }
+    .invest h2 em { color: var(--stone); }
+    .invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(244,239,231,.14); margin-top: 64px; }
+    .invest-item { background: var(--olive-deep); padding: 44px 36px; }
+    .invest-item .num { font-family: var(--serif); font-size: 3.4rem; line-height: 1; color: var(--stone); }
+    .invest-item h3 { font-size: 1.5rem; margin: 18px 0 10px; }
+    .invest-item p { margin: 0; font-size: .95rem; color: rgba(244,239,231,.72); }
+    .disclaimer { margin-top: 28px; font-size: .74rem; color: rgba(244,239,231,.5); }
+
+    /* ---------- Prime island living ---------- */
+    .island { background: var(--linen); padding-bottom: 0; }
+    .island-head { text-align: center; }
+    .island-head .eyebrow::before { display: none; }
+    .island-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; margin: 64px 0 72px; text-align: center; }
+    .island-grid h3 { font-size: 1.9rem; font-style: italic; margin-bottom: 10px; }
+    .island-grid p { margin: 0 auto; max-width: 30ch; color: var(--muted); font-size: .95rem; }
+    .island-photo { margin: 0; }
+    .island-photo img { width: 100%; aspect-ratio: 2 / 1; object-fit: cover; }
+
+    /* ---------- Location ---------- */
+    .map-stack { display: grid; gap: 24px; }
+    .area-map { margin: 0; background: #f1ead6; padding: 12px; }
+    .area-map img { width: 100%; }
+    address { font-style: normal; font-size: 1.02rem; line-height: 1.6; }
+    .location { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .distances { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid var(--line); }
+    .distances li { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+    .distances span { color: var(--muted); }
+    .distances strong { font-family: var(--serif); font-weight: 500; font-size: 1.25rem; }
+    .amenities { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .amenities span { padding: 8px 16px; border: 1px solid var(--line); font-size: .78rem; letter-spacing: .08em; }
+    .map { position: relative; aspect-ratio: 4/5; background: var(--linen); }
+    .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: grayscale(.55) sepia(.2) contrast(.95); }
+
+    /* ---------- Closing CTA ---------- */
+    .closing { position: relative; text-align: center; color: var(--sand); padding: 160px 0; overflow: hidden; }
+    .closing img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .closing::before { content: ""; position: absolute; inset: 0; background: rgba(30,24,18,.58); z-index: 1; }
+    .closing .wrap { position: relative; z-index: 2; }
+    .closing .eyebrow { color: var(--stone); }
+    .closing .eyebrow::before { display: none; }
+    .closing p { max-width: 54ch; margin: 22px auto 40px; color: rgba(244,239,231,.88); font-size: 1.1rem; }
+    .closing .btn-solid { background: var(--sand); color: var(--espresso); border-color: var(--sand); }
+    .closing .btn-solid:hover { background: var(--stone); border-color: var(--stone); }
+
+    /* ---------- Contact ---------- */
+    .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 90px; }
+    .contact-details { margin-top: 40px; display: grid; gap: 26px; }
+    .contact-details div small { display: block; font-size: .7rem; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .contact-details a { font-family: var(--serif); font-size: 1.5rem; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .2s; }
+    .contact-details a:hover { border-color: currentColor; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 24px; }
+    .field { display: flex; flex-direction: column; }
+    .field.full { grid-column: 1 / -1; }
+    label { font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+    input, select, textarea {
+      font: inherit; color: var(--ink); background: transparent;
+      border: 0; border-bottom: 1px solid rgba(47,42,37,.35); padding: 10px 0; border-radius: 0;
+      transition: border-color .2s;
+    }
+    textarea { resize: vertical; min-height: 120px; }
+    input:focus, select:focus, textarea:focus { outline: none; border-bottom-color: var(--olive); }
+    .form-note { grid-column: 1 / -1; font-size: .8rem; color: var(--muted); margin: -8px 0 0; }
+    .form-actions { grid-column: 1 / -1; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--espresso); color: rgba(244,239,231,.75); padding: 80px 0 36px; font-size: .9rem; }
+    .footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(244,239,231,.12); }
+    footer .brand { color: var(--sand); margin-bottom: 20px; }
+    footer h4 { margin: 0 0 18px; font-size: .7rem; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--stone); }
+    footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    footer a { text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--sand); }
+    .social { display: flex; gap: 14px; margin-top: 24px; }
+    .social a { width: 40px; height: 40px; border: 1px solid rgba(244,239,231,.25); display: grid; place-items: center; transition: background .2s, border-color .2s; }
+    .social a:hover { background: var(--sand); color: var(--espresso); border-color: var(--sand); }
+    .social svg { width: 17px; height: 17px; fill: currentColor; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 28px; font-size: .78rem; flex-wrap: wrap; }
+    .footer-bottom nav { display: flex; gap: 24px; }
+
+    .wa-float {
+      position: fixed; right: 24px; bottom: 24px; z-index: 40; width: 56px; height: 56px; border-radius: 50%;
+      background: var(--olive); color: var(--sand); display: grid; place-items: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25); transition: transform .2s, background .2s;
+    }
+    .wa-float:hover { transform: translateY(-3px); background: var(--olive-deep); }
+    .wa-float svg { width: 26px; height: 26px; fill: currentColor; }
+
+    /* reveal on scroll */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .scroll-cue::after, .status i { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      .facts ul { grid-template-columns: repeat(3, 1fr); }
+      .facts li:nth-child(4) { border-left: 0; }
+      .facts li:nth-child(n+4) { border-top: 1px solid rgba(244,239,231,.12); }
+      .spec-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 900px) {
+      section { padding: 88px 0; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        position: fixed; inset: 0; background: var(--olive-deep); flex-direction: column; justify-content: center; gap: 30px;
+        transform: translateX(100%); transition: transform .4s ease;
+      }
+      .nav-links.open { transform: none; }
+      .nav-links a { font-size: .9rem; }
+      .menu-toggle { position: relative; z-index: 60; }
+      .intro, .villa-head, .availability, .location, .contact { grid-template-columns: 1fr; gap: 56px; }
+      .intro-media .inset { right: 16px; bottom: -32px; width: 40%; }
+      .invest-grid { grid-template-columns: 1fr; }
+      .gallery { grid-auto-rows: 90px; }
+      .g1, .g7 { grid-column: span 12; }
+      .g2, .g3, .g4, .g5, .g6 { grid-column: span 6; grid-row: span 3; }
+      .map { aspect-ratio: 4/3; }
+      .island-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 600px) {
+      body { font-size: 16px; }
+      .wrap { width: calc(100% - 32px); }
+      .facts ul { grid-template-columns: repeat(2, 1fr); }
+      .facts li { border-left: 0 !important; border-top: 1px solid rgba(244,239,231,.12); }
+      .facts li:nth-child(-n+2) { border-top: 0; }
+      .facts li:last-child { grid-column: span 2; }
+      .spec-grid { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+      .gallery figure { grid-column: auto !important; grid-row: auto !important; }
+      form { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .brand-text strong { font-size: 1.35rem; }
+      .nav-cta { display: none; }
+      .price-card { padding: 28px 24px; }
+      .price-card .price { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Brand mark: sun rising over waves, shared by Sol Properties and Serangan Sands -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="mark" viewBox="0 0 64 64">
+      <path d="M14 34a18 18 0 0 1 36 0" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M6 40c5 0 7.5-3 13-3s8 3 13 3 7.5-3 13-3 8 3 13 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 47c4 0 6.5-2.5 11-2.5s7 2.5 11 2.5 6.5-2.5 11-2.5 6 2.5 8 2.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <div class="wrap nav">
+      <a class="brand" href="https://www.sollombok.com/" aria-label="Sol Properties home">
+        <svg class="brand-mark"><use href="#mark"/></svg>
+        <span class="brand-text"><strong>SOL</strong><span>PROPERTIES</span></span>
+      </a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#villa" class="current">Serangan Sands</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="https://www.sollombok.com/healthwellnesshub">Health Hub</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-light nav-cta" href="https://www.sollombok.com/book-online">Book Site Tour</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 9h20M4 14h20M4 19h20"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" aria-label="Welcome">
+      <img class="hero-poster" src="https://static.wixstatic.com/media/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80,enc_auto/hero.jpg" alt="">
+      <video autoplay muted loop playsinline preload="metadata"
+             poster="https://static.wixstatic.com/media/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3f000.jpg/v1/fill/w_1920,h_1080,al_c,q_80,enc_auto/hero.jpg">
+        <source src="https://video.wixstatic.com/video/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3/1080p/mp4/file.mp4" type="video/mp4" media="(min-width: 1200px)">
+        <source src="https://video.wixstatic.com/video/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3/720p/mp4/file.mp4" type="video/mp4">
+        <source src="https://video.wixstatic.com/video/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3/480p/mp4/file.mp4" type="video/mp4">
+      </video>
+      <div class="hero-inner">
+        <svg class="hero-logo" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg>
+        <div class="eyebrow">Beachfront Villas · South Lombok</div>
+        <h1>Serangan Sands<span>Surf on your doorstep</span></h1>
+        <p>A private collection of beachfront pool villas, each a sanctuary of privacy and comfort with access to the exceptional amenities of the Serangan Sands community.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="#contact">Reserve Yours</a>
+          <a class="btn btn-light" href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
+        </div>
+      </div>
+      <div class="scroll-cue">Discover</div>
+    </section>
+
+    <!-- ================= KEY FACTS ================= -->
+    <div class="facts">
+      <ul class="wrap">
+        <li><strong>US$360k</strong><span>Land &amp; villa from</span></li>
+        <li><strong>Up to 14%</strong><span>Projected return</span></li>
+        <li><strong>2</strong><span>Bedrooms · 2 Baths</span></li>
+        <li><strong>114 m²</strong><span>Covered area</span></li>
+        <li><strong>~300 m²</strong><span>Private land</span></li>
+      </ul>
+    </div>
+
+    <!-- ================= INTRO ================= -->
+    <section>
+      <div class="wrap intro">
+        <div class="intro-media reveal">
+          <img src="assets/img/villa-exterior.jpg" data-fallback="https://static.wixstatic.com/media/9ebb6f_4c1537da8bcc428d9ec93b3993711b62~mv2.png/v1/fill/w_1100,h_1375,al_c,q_85,enc_auto/architecture.jpg" alt="Timber-shingled roofline of a Serangan Sands villa framed by palms" loading="lazy">
+          <img class="inset" src="assets/img/aerial.jpg" data-fallback="https://static.wixstatic.com/media/9ebb6f_16cfa5c419da4aa49c059d47a96961a3~mv2.png/v1/fill/w_700,h_700,al_c,q_85,enc_auto/living.jpg" alt="Aerial view of the beachfront at Serangan Sands" loading="lazy">
+        </div>
+        <div class="intro-copy reveal">
+          <div class="eyebrow">Welcome to Serangan Sands</div>
+          <h2>Premium beachfront living, <em>crafted for the tropics</em></h2>
+          <p class="lede" style="margin-top:28px">Step into the Serangan Sands Villa and experience the epitome of lifestyle and comfort.</p>
+          <p>This spacious villa offers a seamless blend of indoor and outdoor living, creating a harmonious sanctuary amidst lush tropical landscapes — with the beach and surf spot just metres from your front door.</p>
+          <p>Secure a sustainable investment in South Lombok from only <strong>US$360,000</strong>, including both land and villa.</p>
+          <div class="signature">
+            <a class="btn btn-solid" href="https://www.sollombok.com/book-online">Book a Meeting</a>
+            <a class="btn btn-ghost" href="#availability">View Availability</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= VILLA / LAND & VILLA PACKAGE ================= -->
+    <section class="villa" id="villa">
+      <div class="wrap">
+        <div class="villa-head">
+          <div class="reveal">
+            <div class="eyebrow">The Land &amp; Villa Package</div>
+            <h2>Everything included, <em>from day one</em></h2>
+          </div>
+          <p class="lede reveal">A turnkey two-bedroom pool villa on its own title of land, delivered fully furnished with designer furniture and appliances — ready to live in, or to let.</p>
+        </div>
+
+        <div class="spec-grid reveal">
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><path d="M4 26h24M7 26V12l9-6 9 6v14M13 26v-7h6v7"/></svg>
+            <div><h3>Beachfront Luxury</h3><p>White sand beach and surf break at your door.</p></div>
+          </div>
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><rect x="5" y="5" width="22" height="22"/><path d="M16 5v22M5 16h22"/></svg>
+            <div><h3>114 m² Villa</h3><p>Luxury-crafted covered living area.</p></div>
+          </div>
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><path d="M4 24V10M4 18h24v6M28 24v-6M8 18v-4h7v4"/></svg>
+            <div><h3>2 Bedrooms · 2 Baths</h3><p>Generous suites with ensuite bathrooms.</p></div>
+          </div>
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><path d="M3 22c3 0 4-2 6.5-2S13 22 16 22s4-2 6.5-2 3.5 2 6.5 2M3 27c3 0 4-2 6.5-2S13 27 16 27s4-2 6.5-2 3.5 2 6.5 2M10 18V6h4M18 18V6h4M10 10h8M10 14h8"/></svg>
+            <div><h3>Private Pool</h3><p>Your own swimming pool and sun deck.</p></div>
+          </div>
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><path d="M4 28h24M6 28V8l10-4 10 4v20"/><path d="M6 14h20M6 20h20"/></svg>
+            <div><h3>~300 m² Land</h3><p>Approximate private land holding included.</p></div>
+          </div>
+          <div class="spec">
+            <svg viewBox="0 0 32 32"><path d="M5 18h22v6H5zM8 24v3M24 24v3M7 18v-5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v5"/></svg>
+            <div><h3>Fully Furnished</h3><p>Designer furniture and appliances included.</p></div>
+          </div>
+        </div>
+
+        <div class="villa-actions reveal">
+          <a class="btn btn-solid" href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Download Brochure</a>
+          <a class="btn btn-ghost" href="https://www.sollombok.com/book-online">Book a Meeting</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY ================= -->
+    <section id="gallery">
+      <div class="wrap">
+        <div class="gallery-head">
+          <div class="reveal">
+            <div class="eyebrow">Gallery</div>
+            <h2>Inside the <em>villa</em></h2>
+          </div>
+          <p class="lede reveal" style="max-width:44ch">Indoor and outdoor living flow together around the pool, framed by timber, rattan and tropical gardens.</p>
+        </div>
+        <div class="gallery" id="gallery-grid">
+          <figure class="g1 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_e576c64b22bb4f52a8067ca66201caa5~mv2.png/v1/fill/w_1600,h_1000,al_c,q_85,enc_auto/pool.jpg" alt="Private pool and thatched pavilion at dusk" loading="lazy"><figcaption>Pool &amp; Pavilion</figcaption></figure>
+          <figure class="g2 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_16cfa5c419da4aa49c059d47a96961a3~mv2.png/v1/fill/w_900,h_1100,al_c,q_85,enc_auto/living-detail.jpg" alt="Living room with rattan pendant and timber coffee table" loading="lazy"><figcaption>Living Room</figcaption></figure>
+          <figure class="g3 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_3c8b489804c54f98b88e2b49acdc4830~mv2.png/v1/fill/w_900,h_1100,al_c,q_85,enc_auto/bedroom-timber.jpg" alt="Main bedroom with timber panelling" loading="lazy"><figcaption>Main Bedroom</figcaption></figure>
+          <figure class="g4 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_1dd4e57634b04cfeb136cd351c8022c5~mv2.png/v1/fill/w_900,h_1100,al_c,q_85,enc_auto/bathroom.jpg" alt="Ensuite bathroom in natural stone" loading="lazy"><figcaption>Ensuite</figcaption></figure>
+          <figure class="g5 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_8a836be0d6ef4592a0fa4b5f71308991~mv2.png/v1/fill/w_900,h_1100,al_c,q_85,enc_auto/bedroom.jpg" alt="Second bedroom" loading="lazy"><figcaption>Second Bedroom</figcaption></figure>
+          <figure class="g6 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_0534440acc8f46e582c8286897041541~mv2.png/v1/fill/w_1100,h_900,al_c,q_85,enc_auto/living.jpg" alt="Open-plan living, kitchen and dining" loading="lazy"><figcaption>Open-Plan Living</figcaption></figure>
+          <figure class="g7 reveal"><img src="https://static.wixstatic.com/media/9ebb6f_7f6cb16065d0460a80419648e874b23f~mv2.png/v1/fill/w_1500,h_900,al_c,q_85,enc_auto/outdoor-dining.jpg" alt="Outdoor view from the timber dining table" loading="lazy"><figcaption>Indoor–Outdoor Dining</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INTERIORS BANNER ================= -->
+    <section class="banner" aria-label="Luxury tropical interiors">
+      <img src="assets/img/pavilion.jpg" data-fallback="https://static.wixstatic.com/media/9ebb6f_0534440acc8f46e582c8286897041541~mv2.png/v1/fill/w_2400,h_1300,al_c,q_85,enc_auto/interiors.jpg" alt="" loading="lazy">
+      <div class="wrap">
+        <div class="eyebrow">Luxury Tropical Interiors</div>
+        <h2>Move in and <em>exhale</em></h2>
+        <p>Relax and enjoy a considered tropical interior. All furniture and fittings are included in the package, so you can enjoy your home from day one.</p>
+        <a class="btn btn-light" href="#gallery">Explore the Interiors</a>
+      </div>
+    </section>
+
+    <!-- ================= AVAILABILITY ================= -->
+    <section id="availability">
+      <div class="wrap availability">
+        <div class="reveal">
+          <div class="eyebrow">Beachfront Location</div>
+          <h2>Exclusive pre-sale <em>now open</em></h2>
+          <div class="status"><i></i>Only one land &amp; villa package remains</div>
+          <p class="lede">Every other land and villa package at Serangan Sands has been sold. Secure your piece of paradise with our exclusive pre-sale offer before it's gone.</p>
+          <div class="price-card">
+            <small>Land &amp; Villa from</small>
+            <div class="price">US$360,000</div>
+            <p>Includes land title, completed villa, pool and full furnishing.</p>
+            <a class="btn btn-solid" href="#contact">Reserve Yours</a>
+          </div>
+        </div>
+        <figure class="reveal">
+          <img src="https://static.wixstatic.com/media/9ebb6f_e712c44777bf4739ab8fecf7ec1e5a9b~mv2.jpg/v1/fill/w_1400,h_705,al_c,q_85,enc_auto/siteplan.jpg" alt="Aerial site plan of Serangan Sands showing sold lots and the remaining available lot beside the beach" loading="lazy">
+          <figcaption>Aerial site plan — the remaining lot is outlined in red; all other lots are sold.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= INVESTMENT ================= -->
+    <section class="invest">
+      <div class="wrap">
+        <div class="reveal" style="max-width:720px">
+          <div class="eyebrow">The Investment</div>
+          <h2>Own a slice of paradise <em>that pays its way</em></h2>
+        </div>
+        <div class="invest-grid reveal">
+          <div class="invest-item">
+            <div class="num">14%</div>
+            <h3>Passive Income</h3>
+            <p>Projected returns of up to 14% from holiday rental when you're not in residence.</p>
+          </div>
+          <div class="invest-item">
+            <div class="num">01</div>
+            <h3>Turnkey &amp; Furnished</h3>
+            <p>Designer furniture and appliances included, so the villa is guest-ready from day one.</p>
+          </div>
+          <div class="invest-item">
+            <div class="num">20′</div>
+            <h3>Growing Destination</h3>
+            <p>South Lombok's coastline, a short drive from Lombok International Airport, is fast emerging among travellers.</p>
+          </div>
+        </div>
+        <p class="disclaimer">Projected returns are indicative only and not guaranteed. Please seek independent financial and legal advice before investing.</p>
+      </div>
+    </section>
+
+    <!-- ================= PRIME ISLAND LIVING ================= -->
+    <section class="island">
+      <div class="wrap">
+        <div class="island-head reveal">
+          <div class="eyebrow">Prime Island Living</div>
+          <h2>Selong Belanak <em>Bay</em></h2>
+        </div>
+        <div class="island-grid reveal">
+          <div><h3>Direct Beach Access</h3><p>White sand and surf at the end of your garden, with fine dining nearby.</p></div>
+          <div><h3>Cultural Hotspots</h3><p>Surf, adventure and island culture, surrounded by South Lombok's boutique resorts.</p></div>
+          <div><h3>Accessible Transport</h3><p>Just 20 minutes to Lombok International Airport.</p></div>
+        </div>
+        <figure class="island-photo reveal">
+          <img src="assets/img/beach.jpg" data-fallback="https://static.wixstatic.com/media/9ebb6f_cf49a5b8c14b4a5d964ab7e856e16bb3f000.jpg/v1/fill/w_2000,h_1000,al_c,q_80,enc_auto/bay.jpg" alt="Serangan Beach with green hills behind, South Lombok" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ================= LOCATION ================= -->
+    <section id="location">
+      <div class="wrap location">
+        <div class="reveal">
+          <div class="eyebrow">Location</div>
+          <h2>Serangan, <em>South Lombok</em></h2>
+          <p class="lede" style="margin-top:28px">An exclusive beachfront setting with a white sand beach and surf spot at your door, nestled within the community of South Lombok.</p>
+          <ul class="distances">
+            <li><span>Serangan Beach &amp; surf break</span><strong>At your door</strong></li>
+            <li><span>Selong Belanak Bay</span><strong>5 min</strong></li>
+            <li><span>Lombok International Airport</span><strong>20 min</strong></li>
+            <li><span>Kuta &amp; Mandalika Circuit</span><strong>35 min</strong></li>
+          </ul>
+          <div class="amenities">
+            <span>Padel courts</span><span>Sauna</span><span>Ice baths</span><span>Horse riding</span><span>SABA Resort</span><span>Segara Resort</span><span>Samara &amp; Amber Resort</span><span>Boni Beach</span><span>Mawi surf break</span><span>Belongas surf break</span>
+          </div>
+          <p style="color:var(--muted);margin-top:28px">Surrounded by luxury resorts with dining and activities, you'll never run out of things to do.</p>
+        </div>
+        <div class="map-stack reveal">
+          <figure class="area-map" data-optional>
+            <img src="assets/img/area-map.jpg" alt="Illustrated area map: Serangan Sands Villas beside Serangan Beach, near Boni Beach, Segara Resort, SABA Resort, padel courts, Selong Belanak Beach and the Mawi and Belongas surf breaks; 20 minutes to the international airport and 35 minutes to Kuta and the Mandalika Circuit" loading="lazy">
+          </figure>
+          <div class="map">
+          <iframe title="Map showing Serangan Sands, South Lombok" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=-8.8937603,116.2819948&amp;z=13&amp;output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CLOSING CTA ================= -->
+    <section class="closing">
+      <img src="https://static.wixstatic.com/media/9ebb6f_7f6cb16065d0460a80419648e874b23f~mv2.png/v1/fill/w_2400,h_1200,al_c,q_85,enc_auto/dream.jpg" alt="" loading="lazy">
+      <div class="wrap reveal">
+        <div class="eyebrow">Live Your Dream</div>
+        <h2>Secure your piece of paradise</h2>
+        <p>Don't miss the opportunity to own a slice of tropical luxury with Sol Properties. Visit the site or meet our team to learn more.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="https://www.sollombok.com/book-online">Book Site Tour</a>
+          <a class="btn btn-light" href="https://wa.me/64274067940" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="reveal">
+          <div class="eyebrow">Get in Touch</div>
+          <h2>Let's talk about <em>your villa</em></h2>
+          <p class="lede" style="margin-top:28px">Request the brochure, arrange a site tour or ask us anything. We'll respond within one business day.</p>
+          <div class="contact-details">
+            <div><small>WhatsApp</small><a href="https://wa.me/64274067940" target="_blank" rel="noopener">+64 27 406 7940</a></div>
+            <div><small>Email</small><a href="mailto:solpropertieslombok@gmail.com">solpropertieslombok@gmail.com</a></div>
+            <div><small>Address</small><address>Dusun Serangan, Selong Belanak<br>Kec. Praya Barat, Kabupaten Lombok Tengah<br>Nusa Tenggara Barat 83572, Indonesia</address></div>
+          </div>
+        </div>
+        <form class="reveal" id="enquiry" novalidate>
+          <div class="field"><label for="first">First name</label><input id="first" name="first" autocomplete="given-name" required></div>
+          <div class="field"><label for="last">Last name</label><input id="last" name="last" autocomplete="family-name"></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field full">
+            <label for="interest">I'm interested in</label>
+            <select id="interest" name="interest">
+              <option>Reserving the remaining villa</option>
+              <option>Booking a site tour</option>
+              <option>Receiving the brochure</option>
+              <option>Investment returns</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field full"><label for="message">Message</label><textarea id="message" name="message"></textarea></div>
+          <p class="form-note">Sending opens your email app with your enquiry ready to go.</p>
+          <div class="form-actions"><button class="btn btn-solid" type="submit">Send Enquiry</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="https://www.sollombok.com/">
+            <svg class="brand-mark"><use href="#mark"/></svg>
+            <span class="brand-text"><strong>SOL</strong><span>PROPERTIES</span></span>
+          </a>
+          <p style="max-width:34ch">Boutique beachfront developments in South Lombok, Indonesia.</p>
+          <div class="social">
+            <a href="https://www.instagram.com/sollombok/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1C2.6 9.9 2.6 10.3 2.6 12s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4C15.5 4 15.1 4 12 4zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 8a3.1 3.1 0 1 0 0-6.2 3.1 3.1 0 0 0 0 6.2zm5.1-9.4a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3z"/></svg></a>
+            <a href="https://www.facebook.com/profile.php?id=61579582295076" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Developments</h4>
+          <ul>
+            <li><a href="#villa">Serangan Sands</a></li>
+            <li><a href="https://www.sollombok.com/healthwellnesshub">Kuta Health &amp; Wellbeing Hub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#availability">Availability</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="https://www.sollombok.com/_files/ugd/9ebb6f_885e593f95a74a6dbeb0acad90ac9ecc.pdf" target="_blank" rel="noopener">Brochure (PDF)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://wa.me/64274067940" target="_blank" rel="noopener">+64 27 406 7940</a></li>
+            <li><a href="mailto:solpropertieslombok@gmail.com">solpropertieslombok@gmail.com</a></li>
+            <li><a href="https://www.sollombok.com/book-online">Book a Site Tour</a></li>
+            <li>Selong Belanak, Lombok Tengah<br>NTB 83572, Indonesia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Sol Properties. All rights reserved.</span>
+        <nav>
+          <a href="https://www.sollombok.com/privacy-policy">Privacy Policy</a>
+          <a href="https://www.sollombok.com/accessibility-statement">Accessibility</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/64274067940" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.7-.3-1.5-.7-2.3-1.5-.6-.6-1.1-1.3-1.2-1.5-.1-.2 0-.4.1-.5l.4-.5.3-.4v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4.1 1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+  </a>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lb-btn lb-close" aria-label="Close">×</button>
+    <button class="lb-btn lb-prev" aria-label="Previous image">‹</button>
+    <img alt="">
+    <button class="lb-btn lb-next" aria-label="Next image">›</button>
+    <p></p>
+  </div>
+
+  <script>
+    // Local photos (assets/img) fall back to the Wix-hosted image, or hide if optional
+    document.querySelectorAll('img[data-fallback], [data-optional] img').forEach(img => {
+      const fail = () => {
+        if (img.dataset.fallback && img.src !== img.dataset.fallback) img.src = img.dataset.fallback;
+        else if (img.closest('[data-optional]')) img.closest('[data-optional]').remove();
+      };
+      if (img.complete && img.naturalWidth === 0) fail();
+      img.addEventListener('error', fail);
+    });
+
+    // Header background once the hero is scrolled past
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 60);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      document.body.style.overflow = '';
+    }));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Gallery lightbox
+    const figures = [...document.querySelectorAll('#gallery-grid figure')];
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('p');
+    let idx = 0;
+    const show = i => {
+      idx = (i + figures.length) % figures.length;
+      const img = figures[idx].querySelector('img');
+      lbImg.src = img.src.replace(/w_\d+,h_\d+/, 'w_2000,h_1400').replace('fill', 'fit');
+      lbImg.alt = img.alt;
+      lbCap.textContent = figures[idx].querySelector('figcaption').textContent;
+    };
+    const close = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+    figures.forEach((f, i) => f.addEventListener('click', () => {
+      show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden';
+    }));
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', () => show(idx - 1));
+    lb.querySelector('.lb-next').addEventListener('click', () => show(idx + 1));
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+
+    // Enquiry form → pre-filled email
+    document.getElementById('enquiry').addEventListener('submit', e => {
+      e.preventDefault();
+      const f = e.target;
+      if (!f.first.value.trim() || !f.email.checkValidity() || !f.email.value) {
+        (f.first.value.trim() ? f.email : f.first).focus();
+        return;
+      }
+      const name = `${f.first.value} ${f.last.value}`.trim();
+      const body = [
+        `Name: ${name}`, `Email: ${f.email.value}`, `Phone: ${f.phone.value}`,
+        `Interested in: ${f.interest.value}`, '', f.message.value
+      ].join('\n');
+      location.href = 'mailto:solpropertieslombok@gmail.com'
+        + '?subject=' + encodeURIComponent(`Serangan Sands enquiry — ${name}`)
+        + '&body=' + encodeURIComponent(body);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
