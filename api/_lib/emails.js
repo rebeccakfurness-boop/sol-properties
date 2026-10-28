@@ -17,7 +17,7 @@ function layout({ preheader, heading, body }) {
         <tr><td style="padding:0 36px 36px;font:300 15px/1.7 Arial,sans-serif;color:#2f2a25;">${body}</td></tr>
         <tr><td style="padding:24px 36px;border-top:1px solid #d9cfbf;font:400 12px/1.7 Arial,sans-serif;color:#6f665c;">
           Sol Properties · Serangan Sands, Selong Belanak, South Lombok<br>
-          WhatsApp <a href="${WHATSAPP.url}" style="color:#4e5236;">${WHATSAPP.label}</a> ·
+          WhatsApp ${WHATSAPP.name} <a href="${WHATSAPP.url}" style="color:#4e5236;">${WHATSAPP.label}</a> ·
           <a href="mailto:${NOTIFY_EMAIL}" style="color:#4e5236;">${NOTIFY_EMAIL}</a> ·
           <a href="${SITE_URL}" style="color:#4e5236;">sollombok.com</a>
         </td></tr>
@@ -26,7 +26,7 @@ function layout({ preheader, heading, body }) {
   </table></body></html>`;
 }
 
-const textFooter = `\n\nSol Properties · Serangan Sands, Selong Belanak, South Lombok\nWhatsApp ${WHATSAPP.label} · ${NOTIFY_EMAIL} · ${SITE_URL}`;
+const textFooter = `\n\nSol Properties · Serangan Sands, Selong Belanak, South Lombok\nWhatsApp ${WHATSAPP.name} ${WHATSAPP.label} · ${NOTIFY_EMAIL} · ${SITE_URL}`;
 
 // Sent automatically to anyone who submits the contact form.
 export function enquiryAutoReply({ first }) {

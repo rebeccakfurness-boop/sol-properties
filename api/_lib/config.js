@@ -48,4 +48,4 @@ export const SENDER_EMAIL = process.env.SENDER_EMAIL || 'solpropertieslombok@gma
 export const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || 'solpropertieslombok@gmail.com';
 export const SITE_URL = (process.env.SITE_URL || 'https://www.sollombok.com').replace(/\/$/, '');
 export const BROCHURE_URL = process.env.BROCHURE_URL || `${SITE_URL}/assets/serangan-sands-brochure.pdf`;
-export const WHATSAPP = { label: '+64 27 406 7940', url: 'https://wa.me/64274067940' };
+export const WHATSAPP = { name: 'Mariya', label: '+62 821 4591 6078', url: 'https://wa.me/6282145916078' };
